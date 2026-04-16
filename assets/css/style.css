@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+  --bg-color: #0d0d12;
+  --text-color: #ffffff;
+  --text-muted: #a0a0ab;
+  --primary: #ff3366; 
+  --secondary: #00d2ff; 
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.1);
+  --font-family: 'Outfit', sans-serif;
+  --glow: 0 0 20px rgba(255, 51, 102, 0.5);
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Navbar */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 0;
+  background: rgba(13, 13, 18, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-links a {
+  margin-left: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.nav-links a:hover {
+  color: var(--primary);
+}
+.btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: var(--glow);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(255, 51, 102, 0.8);
+  color: #fff;
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+}
+.btn-outline:hover {
+  background: var(--secondary);
+  color: var(--bg-color);
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+}
+
+/* Typography elements */
+.section-title {
+  font-size: 44px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.highlight {
+  color: var(--primary);
+}
+
+/* Card basic */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-top: -80px; /* offset header */
+  padding-top: 80px;
+}
+.hero-content {
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+}
+.hero-title {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+.hero-subtitle {
+  font-size: 20px;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+.hero-cta {
+  display: flex;
+}
+
+/* Equipment Showcase */
+.equipment-showcase {
+  padding: 100px 0;
+}
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+.equipment-card h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+.equipment-card .brand {
+  color: var(--secondary);
+  font-size: 13px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.availability p {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--bg-color);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  border: 1px solid var(--border);
+}
+.progress {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+.status-text {
+  font-size: 12px;
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Subscriptions */
+.subscriptions {
+  padding: 100px 0;
+  background: linear-gradient(180deg, var(--bg-color) 0%, rgba(20,20,25,1) 100%);
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.pricing-card {
+  text-align: center;
+  position: relative;
+  padding: 50px 30px;
+}
+.pricing-card h3 {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+.pricing-card .price {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+.pricing-card .price span {
+  font-size: 18px;
+  color: var(--text-muted);
+}
+.pricing-card .features {
+  list-style: none;
+  margin-bottom: 40px;
+  text-align: left;
+}
+.pricing-card .features li {
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+.pricing-card .features li.muted {
+  color: #555;
+}
+.pricing-card .btn {
+  width: 100%;
+}
+.pricing-card.popular {
+  border-color: var(--primary);
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(255, 51, 102, 0.1);
+}
+.pricing-card.popular:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+.badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--glow);
+}
+
+/* Footer */
+footer {
+  background: #050508;
+  padding: 60px 0 30px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  margin-top: 80px;
+}
+footer .logo {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+footer p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
