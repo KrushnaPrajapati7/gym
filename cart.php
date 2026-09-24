@@ -50,7 +50,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ?>
                     <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
                         <td style="padding:15px; font-weight:600;"><?= htmlspecialchars($p['name']) ?></td>
-                        <td style="padding:15px; text-align:center;"><?= $qty ?></td>
+                        <td style="padding:15px; text-align:center;"><?= htmlentities($qty, ENT_QUOTES) ?></td>
                         <td style="padding:15px; text-align:right;">₹<?= number_format($subtotal, 2) ?></td>
                     </tr>
                     <?php endif; endforeach; ?>
