@@ -7,6 +7,9 @@ RUN a2enmod rewrite
 # Copy all local files to the Apache server root
 COPY . /var/www/html/
 
+RUN useradd -U -u 1000 appuser && chown -R 1000:1000 /var/www/html
+USER 1000
+
 # Update Apache to listen on Render's dynamic $PORT variable instead of the default 80
 CMD sed -i "s/Listen 80/Listen ${PORT:-80}/g" /etc/apache2/ports.conf && \
     sed -i "s/:80/:${PORT:-80}/g" /etc/apache2/sites-available/000-default.conf && \
